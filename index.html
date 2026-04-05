@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+    text-align: center;
+    padding: 20px;
+}
+
+/* MAIN CARD */
+.main-card {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeUp 1.5s ease;
+}
+
+/* IMAGE FIX */
+img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: top; /* 🔥 वरचा भाग दिसेल */
+    border-radius: 15px;
+}
+
+/* NAMES */
+.names {
+    font-size: 24px;
+    color: #e91e63;
+    font-weight: 600;
+    margin-top: 10px;
+    animation: zoomIn 2s ease;
+}
+
+/* EVENTS */
+.event-card {
+    background: rgba(255,255,255,0.95);
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    animation: fadeUp 1.5s ease;
+}
+
+.event-card h3 {
+    color: #b76e79;
+}
+
+/* MAP */
+.map {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    border: none;
+}
+
+/* BUTTON */
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #e91e63;
+    text-decoration: none;
+    color: #e91e63;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    background: #e91e63;
+    color: white;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {opacity:0; transform: translateY(30px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5); opacity:0;}
+    to {transform: scale(1); opacity:1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MAIN -->
+<div class="main-card">
+<img src="photo.jpg">
+
+<h2>💍 Wedding Invitation 💍</h2>
+
+<div class="names">
+Pradumn ❤️ Rutuja
+</div>
+
+<p>
+📅 01 May 2026 <br>
+⏰ 01:30 PM
+</p>
+</div>
+
+<h2>✨ Events ✨</h2>
+
+<!-- MEHENDI -->
+<div class="event-card">
+<h3>🌿 Mehendi</h3>
+<p>30 April • 04:00 PM</p>
+<p>Traditional ceremony with colors</p>
+</div>
+
+<!-- HALDI -->
+<div class="event-card">
+<h3>🎶 Haldi</h3>
+<p>30 April • 07:00 PM</p>
+<p>Music, dance & celebration night</p>
+</div>
+
+<!-- WEDDING -->
+<div class="event-card">
+<h3>💍 Wedding</h3>
+<p>01 May • 01:30 PM</p>
+<p>The beginning of forever ❤️</p>
+</div>
+
+<!-- MAP -->
+<div class="event-card">
+<h3>📍 Venue</h3>
+<p><b>Aaisaheb Lawns, Badnapur</b></p>
+
+<iframe class="map"
+src="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur&output=embed">
+</iframe>
+
+<a class="map-btn" 
+href="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur" 
+target="_blank">
+View on Google Maps
+</a>
+
+</div>
+
+</body>
+</html>
