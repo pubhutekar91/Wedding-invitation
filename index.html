@@ -13,100 +13,92 @@ body {
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
     text-align:center;
+    background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#fad0c4,#ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color:#fff;
-
-    /* FULL IMAGE BACKGROUND */
-    background: url("02.jpg.jpeg") no-repeat center center/cover;
+    padding:10px;
 }
 
-/* DARK OVERLAY */
-body::before {
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.65);
-    z-index:-1;
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-/* GLASS CARD */
 .overlay {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding:25px;
-    border-radius:25px;
-    max-width:750px;
-    margin:40px auto;
-    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
+    padding:20px;
+    border-radius:20px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 0 40px rgba(255,255,255,0.2);
 }
 
-/* TOP IMAGE */
+/* 🔥 FULL IMAGE STYLE */
 .top-image {
     width:100%;
-    height:260px;
+    height:300px;
     object-fit:cover;
     border-radius:20px;
     margin-bottom:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* NAMES */
 .names {
-    font-size:32px;
     font-weight:800;
+    background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#42e695);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin:15px 0;
-    background: linear-gradient(90deg,#ffcc00,#7CFC00);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-size:34px;
 }
 
 /* COUNTDOWN */
 #fancy-countdown{
     display:flex;
     justify-content:center;
-    gap:10px;
-    margin-top:15px;
+    gap:8px;
+    margin-top:10px;
 }
 
 .count-box{
-    background: rgba(0,0,0,0.8);
-    padding:10px 15px;
-    border-radius:12px;
-    min-width:65px;
+    background: rgba(0,0,0,0.7);
+    padding:8px 12px;
+    border-radius:10px;
+    min-width:60px;
     font-weight:700;
 }
 
 .count-box span{
     display:block;
-    font-size:12px;
-    color:#ccc;
+    font-size:11px;
 }
 
 /* EVENTS */
 .event-card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    margin:15px auto;
-    padding:20px;
-    border-radius:20px;
+    background: rgba(0,0,0,0.75);
+    margin:12px auto;
+    padding:18px;
+    border-radius:18px;
     max-width:400px;
 }
 
-/* BUTTON */
 .map-btn {
     display:inline-block;
     margin-top:10px;
     padding:8px 20px;
     border-radius:25px;
-    border:1px solid #7CFC00;
-    color:#7CFC00;
+    border:1px solid #42e695;
+    color:#42e695;
     text-decoration:none;
 }
-.map-btn:hover{
-    background:#7CFC00;
-    color:black;
+.map-btn:hover{background:#42e695;color:black;}
+
+@media (max-width:480px){
+.top-image{height:220px;}
+.names{font-size:24px;}
 }
 </style>
 </head>
@@ -115,16 +107,16 @@ body::before {
 
 <div class="overlay">
 
+<!-- ✅ FULL IMAGE -->
 <img src="02.jpg.jpeg" class="top-image">
 
 <h2>💍 Wedding Invitation 💍</h2>
+<div class="names">Pradumn ♥️ Rutuja</div>
 
-<div class="names">Pradumn 💛 Rutuja</div>
-
+<!-- ✅ TIME UPDATED -->
 <p>📅 01 May 2026<br>⏰ 12:30 PM</p>
 
 <div id="fancy-countdown"></div>
-
 </div>
 
 <h2>✨ Events ✨</h2>
@@ -154,8 +146,8 @@ body::before {
 const weddingDate = new Date("May 1, 2026 12:30:00").getTime();
 
 function updateCountdown(){
-const now = new Date().getTime();
-const distance = weddingDate - now;
+const now=new Date().getTime();
+const distance=weddingDate-now;
 
 if(distance<0){
 document.getElementById("fancy-countdown").innerHTML="🎉 Started!";
