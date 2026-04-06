@@ -4,158 +4,241 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* BODY & BACKGROUND */
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
-    text-align: center;
-    padding: 20px;
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    text-align:center;
+    background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#fad0c4,#ff9a9e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color:#fff;
+    padding:20px;
 }
 
-/* MAIN CARD */
-.main-card {
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    animation: fadeUp 1.5s ease;
+/* Animated gradient BG */
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-/* IMAGE FIX */
-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: top; /* 🔥 वरचा भाग दिसेल */
-    border-radius: 15px;
+/* Overlay Card */
+.overlay {
+    background: rgba(0,0,0,0.55);
+    padding:25px;
+    border-radius:20px;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 0 40px rgba(255,255,255,0.2);
+    animation: fadeUp 1s ease;
 }
 
-/* NAMES */
+/* Names */
 .names {
-    font-size: 24px;
-    color: #e91e63;
-    font-weight: 600;
-    margin-top: 10px;
-    animation: zoomIn 2s ease;
+    font-weight:800;
+    background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#42e695);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing:1px;
+    margin:20px 0;
+    white-space:nowrap;
+    font-size:36px;
+    animation: shimmer 5s ease infinite;
 }
 
-/* EVENTS */
+/* Shimmer Animation */
+@keyframes shimmer {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Event Cards */
 .event-card {
-    background: rgba(255,255,255,0.95);
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 350px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    animation: fadeUp 1.5s ease;
+    background: rgba(0,0,0,0.75);
+    color:#fff;
+    margin:12px auto;
+    padding:18px;
+    border-radius:18px;
+    max-width:400px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity:0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
 }
 
 .event-card h3 {
-    color: #b76e79;
+    background: linear-gradient(45deg,#ff4e50,#f9d423,#42e695);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:6px;
 }
 
-/* MAP */
-.map {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    border: none;
+.event-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255,255,255,0.15);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* BUTTON */
-.map-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 1px solid #e91e63;
-    text-decoration: none;
-    color: #e91e63;
-    transition: 0.3s;
-}
-
-.map-btn:hover {
-    background: #e91e63;
-    color: white;
-}
-
-/* ANIMATIONS */
+/* FadeUp Animation */
 @keyframes fadeUp {
-    from {opacity:0; transform: translateY(30px);}
-    to {opacity:1; transform: translateY(0);}
+    0%{opacity:0;transform:translateY(30px);}
+    100%{opacity:1;transform:translateY(0);}
 }
 
-@keyframes zoomIn {
-    from {transform: scale(0.5); opacity:0;}
-    to {transform: scale(1); opacity:1;}
+/* Map Button */
+.map-btn {
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 20px;
+    border-radius:25px;
+    border:1px solid #42e695;
+    text-decoration:none;
+    color:#42e695;
+    font-weight:600;
+    transition:0.3s;
 }
+
+.map-btn:hover{background:#42e695;color:black;}
+
+/* Countdown */
+#fancy-countdown{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+    margin:10px 0;
+}
+
+.count-box{
+    background: rgba(0,0,0,0.6);
+    color:white;
+    padding:6px 10px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:700;
+    min-width:50px;
+    box-shadow:0 0 5px rgba(255,255,255,0.3);
+    text-align:center;
+}
+
+.count-box span{display:block;font-size:10px;font-weight:500;}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    font-size:16px;
+    animation: floatUp 5s linear infinite;
+}
+@keyframes floatUp{
+    0%{transform:translateY(0) scale(0.8);opacity:1;}
+    50%{opacity:0.8;}
+    100%{transform:translateY(-700px) scale(1.2);opacity:0;}
+}
+
+/* Responsive Names */
+@media (max-width:480px){.names{font-size:24px;}}
+@media (max-width:360px){.names{font-size:20px;}}
 </style>
-
 </head>
-
 <body>
 
-<!-- MAIN -->
-<div class="main-card">
-<img src="photo.jpg">
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>confetti({particleCount:120,spread:100,origin:{y:0.6}});</script>
 
+<div class="overlay">
 <h2>💍 Wedding Invitation 💍</h2>
-
-<div class="names">
-Pradumn ❤️ Rutuja
-</div>
-
-<p>
-📅 01 May 2026 <br>
-⏰ 01:30 PM
-</p>
+<div class="names">Pradumn ♥️ Rutuja</div>
+<p>📅 01 May 2026<br>⏰ 01:30 PM</p>
+<div id="fancy-countdown"></div>
 </div>
 
 <h2>✨ Events ✨</h2>
 
-<!-- MEHENDI -->
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.2s;">
 <h3>🌿 Mehendi</h3>
 <p>30 April • 04:00 PM</p>
-<p>Traditional ceremony with colors</p>
+<p>Traditional colorful ceremony</p>
 </div>
 
-<!-- HALDI -->
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.4s;">
 <h3>🎶 Haldi</h3>
 <p>30 April • 07:00 PM</p>
 <p>Music, dance & celebration night</p>
 </div>
 
-<!-- WEDDING -->
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.6s;">
 <h3>💍 Wedding</h3>
 <p>01 May • 01:30 PM</p>
 <p>The beginning of forever ❤️</p>
 </div>
 
-<!-- MAP -->
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.8s;">
 <h3>📍 Venue</h3>
 <p><b>Aaisaheb Lawns, Badnapur</b></p>
-
-<iframe class="map"
-src="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur&output=embed">
-</iframe>
-
-<a class="map-btn" 
-href="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur" 
-target="_blank">
-View on Google Maps
-</a>
-
+<a class="map-btn" href="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur" target="_blank">View on Google Maps</a>
 </div>
+
+<!-- Countdown Script -->
+<script>
+const weddingDate = new Date("May 1, 2026 13:30:00").getTime();
+const fancyCountdown=document.getElementById("fancy-countdown");
+
+function updateCountdown(){
+const now=new Date().getTime();
+const distance=weddingDate-now;
+if(distance<0){fancyCountdown.innerHTML="<div class='count-box'>🎉 Wedding Started!</div>";return;}
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+fancyCountdown.innerHTML=`
+<div class="count-box">${days}<span>Days</span></div>
+<div class="count-box">${hours}<span>Hours</span></div>
+<div class="count-box">${minutes}<span>Minutes</span></div>
+<div class="count-box">${seconds}<span>Seconds</span></div>`;
+}
+updateCountdown();setInterval(updateCountdown,1000);
+</script>
+
+<!-- Floating hearts & click hearts -->
+<script>
+function createHeart(){
+  const heart=document.createElement('div');
+  heart.className='heart';
+  heart.style.left=Math.random()*window.innerWidth+'px';
+  heart.style.fontSize=(12+Math.random()*14)+'px';
+  heart.style.color=['#ff4b2b','#ff6ec4','#f9d423','#42e695'][Math.floor(Math.random()*4)];
+  heart.innerHTML='❤️';
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+}
+setInterval(createHeart,400);
+
+// Click hearts
+document.body.addEventListener('click',function(e){
+  const heart=document.createElement('div');
+  heart.className='heart';
+  heart.style.left=e.pageX+'px';
+  heart.style.top=e.pageY+'px';
+  heart.style.fontSize=(16+Math.random()*10)+'px';
+  heart.style.color=['#ff4b2b','#ff6ec4','#f9d423','#42e695'][Math.floor(Math.random()*4)];
+  heart.innerHTML='❤️';
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),2000);
+});
+</script>
 
 </body>
 </html>
