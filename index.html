@@ -17,7 +17,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     color:#fff;
-    padding:10px;
+    padding:20px;
 }
 
 @keyframes gradientBG {
@@ -28,7 +28,7 @@ body {
 
 .overlay {
     background: rgba(0,0,0,0.55);
-    padding:20px;
+    padding:25px;
     border-radius:20px;
     max-width:700px;
     margin:auto;
@@ -36,26 +36,27 @@ body {
     animation: fadeUp 1s ease;
 }
 
-/* FULL IMAGE */
-.top-image {
+/* 🔥 PHOTO STYLE */
+.top-image{
     width:100%;
-    height:300px;
+    height:260px;
     object-fit:cover;
-    border-radius:20px;
+    border-radius:15px;
     margin-bottom:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* NAMES SHIMMER */
 .names {
     font-weight:800;
     background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#42e695);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size:34px;
-    margin:15px 0;
-    animation: shimmer 5s infinite;
+    letter-spacing:1px;
+    margin:20px 0;
+    white-space:nowrap;
+    font-size:36px;
+    animation: shimmer 5s ease infinite;
 }
 
 @keyframes shimmer {
@@ -64,52 +65,21 @@ body {
     100%{background-position:0% 50%;}
 }
 
-/* EVENTS */
 .event-card {
     background: rgba(0,0,0,0.75);
     margin:12px auto;
     padding:18px;
     border-radius:18px;
     max-width:400px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
     opacity:0;
     transform: translateY(30px);
     animation: fadeUp 1s forwards;
 }
 
-.event-card:nth-child(1){animation-delay:0.2s;}
-.event-card:nth-child(2){animation-delay:0.4s;}
-.event-card:nth-child(3){animation-delay:0.6s;}
-.event-card:nth-child(4){animation-delay:0.8s;}
-
 @keyframes fadeUp {
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* COUNTDOWN */
-#fancy-countdown{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-top:10px;
-}
-
-.count-box{
-    background: rgba(0,0,0,0.7);
-    padding:8px 12px;
-    border-radius:10px;
-    min-width:60px;
-    font-weight:700;
-}
-
-/* HEARTS */
-.heart{
-    position:absolute;
-    font-size:16px;
-    animation: floatUp 5s linear infinite;
-}
-@keyframes floatUp{
-    0%{transform:translateY(0) scale(0.8);opacity:1;}
-    100%{transform:translateY(-700px) scale(1.2);opacity:0;}
+    0%{opacity:0;transform:translateY(30px);}
+    100%{opacity:1;transform:translateY(0);}
 }
 
 .map-btn {
@@ -118,33 +88,52 @@ body {
     padding:8px 20px;
     border-radius:25px;
     border:1px solid #42e695;
-    color:#42e695;
     text-decoration:none;
+    color:#42e695;
 }
-.map-btn:hover{background:#42e695;color:black;}
 
-@media (max-width:480px){
-.top-image{height:220px;}
-.names{font-size:24px;}
+#fancy-countdown{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+    margin:10px 0;
+}
+
+.count-box{
+    background: rgba(0,0,0,0.6);
+    padding:6px 10px;
+    border-radius:10px;
+    font-weight:700;
+    min-width:50px;
+}
+
+.count-box span{display:block;font-size:10px;}
+
+.heart{
+    position:absolute;
+    animation: floatUp 5s linear infinite;
+}
+@keyframes floatUp{
+    100%{transform:translateY(-700px);opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎉 CONFETTI -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-<script>
-confetti({particleCount:120,spread:100,origin:{y:0.6}});
-</script>
+<script>confetti({particleCount:120,spread:100,origin:{y:0.6}});</script>
 
 <div class="overlay">
 
+<!-- ✅ PHOTO ADDED -->
 <img src="02.jpg.jpeg" class="top-image">
 
 <h2>💍 Wedding Invitation 💍</h2>
 <div class="names">Pradumn ♥️ Rutuja</div>
 
+<!-- ✅ TIME FIX -->
 <p>📅 01 May 2026<br>⏰ 12:30 PM</p>
 
 <div id="fancy-countdown"></div>
@@ -152,22 +141,22 @@ confetti({particleCount:120,spread:100,origin:{y:0.6}});
 
 <h2>✨ Events ✨</h2>
 
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.2s;">
 <h3>🌿 Mehendi</h3>
 <p>29 April • 05:00 PM</p>
 </div>
 
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.4s;">
 <h3>🎶 Haldi</h3>
 <p>30 April • 07:00 PM</p>
 </div>
 
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.6s;">
 <h3>💍 Wedding</h3>
 <p>01 May • 12:30 PM</p>
 </div>
 
-<div class="event-card">
+<div class="event-card" style="animation-delay:0.8s;">
 <h3>📍 Venue</h3>
 <p>Aaisaheb Lawns, Badnapur</p>
 <a class="map-btn" href="https://www.google.com/maps?q=Aaisaheb+Lawns+Badnapur" target="_blank">View Map</a>
@@ -175,13 +164,14 @@ confetti({particleCount:120,spread:100,origin:{y:0.6}});
 
 <script>
 const weddingDate = new Date("May 1, 2026 12:30:00").getTime();
+const fancyCountdown=document.getElementById("fancy-countdown");
 
 function updateCountdown(){
 const now=new Date().getTime();
 const distance=weddingDate-now;
 
 if(distance<0){
-document.getElementById("fancy-countdown").innerHTML="🎉 Started!";
+fancyCountdown.innerHTML="🎉 Wedding Started!";
 return;
 }
 
@@ -190,7 +180,7 @@ const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 const m=Math.floor((distance%(1000*60*60))/(1000*60));
 const s=Math.floor((distance%(1000*60))/1000);
 
-document.getElementById("fancy-countdown").innerHTML=
+fancyCountdown.innerHTML=
 `<div class="count-box">${d}<span>Days</span></div>
 <div class="count-box">${h}<span>Hours</span></div>
 <div class="count-box">${m}<span>Minutes</span></div>
@@ -200,13 +190,11 @@ document.getElementById("fancy-countdown").innerHTML=
 setInterval(updateCountdown,1000);
 </script>
 
-<!-- ❤️ FLOATING HEARTS -->
 <script>
 function createHeart(){
   const heart=document.createElement('div');
   heart.className='heart';
   heart.style.left=Math.random()*window.innerWidth+'px';
-  heart.style.color=['#ff4b2b','#ff6ec4','#f9d423','#42e695'][Math.floor(Math.random()*4)];
   heart.innerHTML='❤️';
   document.body.appendChild(heart);
   setTimeout(()=>heart.remove(),5000);
