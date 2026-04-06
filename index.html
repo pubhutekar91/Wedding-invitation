@@ -46,7 +46,7 @@ body {
     box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* NAMES */
+/* 🔥 FIXED NAMES (Responsive) */
 .names {
     font-weight:800;
     background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#42e695);
@@ -55,8 +55,12 @@ body {
     -webkit-text-fill-color: transparent;
     letter-spacing:1px;
     margin:20px 0;
-    white-space:nowrap;
-    font-size:36px;
+
+    font-size: clamp(20px, 6vw, 36px);
+    white-space: normal;
+    word-break: break-word;
+    line-height:1.2;
+
     animation: shimmer 5s ease infinite;
 }
 
@@ -153,7 +157,6 @@ body {
 
 <h2>✨ Events ✨</h2>
 
-<!-- EVENTS WITH DESCRIPTION -->
 <div class="event-card" style="animation-delay:0.2s;">
 <h3>🌿 Mehendi</h3>
 <p>29 April • 05:00 PM</p>
