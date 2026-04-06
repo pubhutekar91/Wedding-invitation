@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🔥 WhatsApp Preview Meta Tags -->
+<meta property="og:title" content="💍 Pradumn ❤️ Rutuja Wedding Invitation">
+<meta property="og:description" content="Join us on our special day ✨">
+<meta property="og:image" content="https://ubhutekar91.github.io/wedding/02.jpg.jpeg">
+<meta property="og:url" content="https://ubhutekar91.github.io/wedding/">
+<meta name="twitter:card" content="summary_large_image">
+
 <title>Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
@@ -36,7 +44,7 @@ body {
     animation: fadeUp 1s ease;
 }
 
-/* PHOTO */
+/* IMAGE */
 .top-image{
     width:100%;
     height:260px;
@@ -46,20 +54,18 @@ body {
     box-shadow:0 5px 15px rgba(0,0,0,0.4);
 }
 
-/* 🔥 FIXED NAMES (Responsive) */
+/* NAMES FIX */
 .names {
     font-weight:800;
     background: linear-gradient(90deg,#ff416c,#ff4b2b,#f9d423,#42e695);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing:1px;
     margin:20px 0;
 
     font-size: clamp(20px, 6vw, 36px);
     white-space: normal;
     word-break: break-word;
-    line-height:1.2;
 
     animation: shimmer 5s ease infinite;
 }
@@ -104,28 +110,21 @@ body {
     text-decoration:none;
     color:#42e695;
 }
-.map-btn:hover{background:#42e695;color:black;}
 
 /* COUNTDOWN */
 #fancy-countdown{
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
     gap:6px;
-    margin:10px 0;
 }
 
 .count-box{
     background: rgba(0,0,0,0.6);
     padding:6px 10px;
     border-radius:10px;
-    font-weight:700;
-    min-width:50px;
 }
 
-.count-box span{display:block;font-size:10px;}
-
-/* HEARTS */
+/* HEART */
 .heart{
     position:absolute;
     animation: floatUp 5s linear infinite;
@@ -138,14 +137,15 @@ body {
 
 <body>
 
-<!-- CONFETTI -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script>confetti({particleCount:120,spread:100,origin:{y:0.6}});</script>
 
 <div class="overlay">
 
-<!-- PHOTO -->
+<!-- 🔥 CLICKABLE PHOTO -->
+<a href="https://ubhutekar91.github.io/wedding/" target="_blank">
 <img src="02.jpg.jpeg" class="top-image">
+</a>
 
 <h2>💍 Wedding Invitation 💍</h2>
 <div class="names">Pradumn ♥️ Rutuja</div>
